@@ -1,0 +1,22 @@
+package com.example.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.FakeEntity.User;
+
+@RestController
+public class BlockingController {
+
+List<User> li=new ArrayList<User>();
+User user=new User(1,"Vikas","Indore","Engineer");
+
+	@GetMapping("/Blocking")
+	public String get()
+	{
+		return "Hello World";
+	}
+}

@@ -1,0 +1,40 @@
+package com.example.controller;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.FakeEntity.User;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@RestController 
+public class NonBlockingController {
+	
+	
+	
+	List<User> li1 = new ArrayList<User>();
+
+	ArrayList<User> li11 = new ArrayList<User>();
+
+
+	List<User> li = Arrays.asList(new User(1,"Vikas","Indore","Engineer"),
+			new User(2,"Sona","Bhopal","Engineer"),new User(3,"Nitin","dewas","Tester")
+			);
+	@GetMapping("/NonBlockingList")
+	public Flux<User> getList()
+	{
+		return Flux.fromIterable(li);
+	}
+
+	
+	@GetMapping("/NonBlock")
+	public Mono<String> get()
+	{
+		return Mono.just("Hello World");
+	}
+}

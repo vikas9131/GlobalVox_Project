@@ -1,0 +1,5 @@
+package com.cb.dto;
+
+public class UserDto {
+
+}

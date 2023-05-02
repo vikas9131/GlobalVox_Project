@@ -1,0 +1,5 @@
+package com.cb.model;
+
+public class User {
+
+}

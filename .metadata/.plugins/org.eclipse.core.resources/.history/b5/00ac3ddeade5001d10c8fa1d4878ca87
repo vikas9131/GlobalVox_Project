@@ -1,0 +1,45 @@
+package com.example.Serviceimpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.Entity.User;
+import com.example.Repository.UserRepository;
+import com.example.Service.UserService;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Service
+public class UserServiceimpl implements UserService
+{
+	@Autowired
+	UserRepository userrepository;
+
+	@Override
+	public Flux<User> getAllUser() {
+		return userrepository.findAll();
+		
+	}
+
+	@Override
+	public Mono<User> Createuser(User user) {
+	
+		return ;
+	}
+
+	@Override
+	public Mono<User> deleteUser() {
+		
+		return null;
+	}
+
+	@Override
+	public Mono<Void> getUserById(long id) {
+		
+		return null;
+	}
+
+	
+	
+}

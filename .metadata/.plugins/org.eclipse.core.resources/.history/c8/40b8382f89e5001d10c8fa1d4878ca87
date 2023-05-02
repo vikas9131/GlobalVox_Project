@@ -1,0 +1,36 @@
+package com.example.controller;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.FakeEntity.User;
+
+@RestController
+public class BlockingController {
+	List<User> li1 = new ArrayList<User>();
+
+	ArrayList<User> li11 = new ArrayList<User>();
+
+
+	List<User> li = Arrays.asList(new User(1,"Vikas","Indore","Engineer"),
+			new User(2,"Sona","Bhopal","Engineer"),new User(3,"Nitin","dewas","Tester")
+			);
+
+
+@GetMapping("/Blocking")
+	public String get()
+	{
+		return "Hello World";
+	}
+
+@GetMapping("/Blocking1")
+public List<User> getList()
+{
+	return li;
+}
+
+}
